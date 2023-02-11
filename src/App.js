@@ -10,11 +10,9 @@ export default class ArticlesList extends Component{
 ...INITIAL_STATE
     }
 handleSubmit = async (event) => {
-console.log(1)
 await event.preventDefault();
-const response = await Searcher(`${event.nativeEvent.path[1].childNodes[0].defaultValue}`)
+const response = await Searcher(this.state.search)
 console.log(response)
-this.setState({search:event.nativeEvent.path[1].childNodes[0].defaultValue})
 this.setState({list:response})
 }
 inputVal = async (event) =>{
